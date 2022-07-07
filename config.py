@@ -20,3 +20,5 @@ ZILLOW_URL = "https://www.zillow.com/raleigh-nc/rentals/1-_beds/2_p/" \
 GOOGLE_FORM_URL = "https://docs.google.com/forms" \
                   "/d/e/1FAIpQLSdWK_d496X6gXIonv9wB43LenjzSgsWobrFvmuS4m_Shk4QyQ/" \
                   "viewform?usp=sf_link"
+GOOGLE_BACKEND_URL = 'https://docs.google.com/forms/d/' \
+                     '1FBkGhqcSF0B0D8tckj9QGIw02KdY292JGXdsBtPr6PI/edit?usp=sharing'
