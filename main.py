@@ -9,7 +9,10 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium import webdriver
 from selenium.webdriver.chrome import options
 from selenium.webdriver.common.by import By
+<<<<<<< HEAD
 from selenium.webdriver import ActionChains
+=======
+>>>>>>> old-state
 import json
 
 # Specify User-Agent to avoid captcha
@@ -115,11 +118,10 @@ for card in photo_cards:
 #     prices.append(price_formatted)
 
 
-# Submit data to google form which automatically populates spreadsheet
-# Otherwise we'd have to use selenium webdriver with normal browser profile
+# Submit data to google form which will then automatically populate spreadsheet
 driver.get(url=GOOGLE_FORM_URL)
-for address, link, price in zip(addresses, links, prices):
-    time.sleep(1)
+for address, link, price in zip(zillow_addresses, zillow_links, zillow_prices):
+    time.sleep(.5)
     address_input = driver.find_element(By.XPATH, '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]'
                                                   '/div/div/div[2]/div/div[1]/div/div[1]/input')
     price_input = driver.find_element(By.XPATH, '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div'
@@ -128,15 +130,18 @@ for address, link, price in zip(addresses, links, prices):
                                                '/div/div[1]/div/div[1]/input')
 
     submit_button = driver.find_element(By.XPATH, '//*[@id="mG61Hd"]/div[2]/div/div[3]/div[1]/div[1]/div')
+    # Handle potential KeyErrors gracefully
     try:
         address_input.send_keys(address)
         price_input.send_keys(price)
         link_input.send_keys(link)
         submit_button.click()
-        driver.get(url='https://docs.google.com/forms/d/e/'
-                       '1FAIpQLSdWK_d496X6gXIonv9wB43LenjzSgsWobrFvmuS4m_Shk4QyQ/viewform')
         driver.get(url=GOOGLE_FORM_URL)
     except KeyError:
         pass
+<<<<<<< HEAD
 
 
+=======
+#
+>>>>>>> old-state
