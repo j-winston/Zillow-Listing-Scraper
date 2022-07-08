@@ -9,10 +9,6 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium import webdriver
 from selenium.webdriver.chrome import options
 from selenium.webdriver.common.by import By
-<<<<<<< HEAD
-from selenium.webdriver import ActionChains
-=======
->>>>>>> old-state
 import json
 
 # Specify User-Agent to avoid captcha
